@@ -1,6 +1,6 @@
 const router = require("express").Router();
 
-const veiculoController = require("../controllers/veiculoController");
+const veiculoController = require('../controllers/veiculoControllers');
 
 router.get("/cadastro", veiculoController.formCadastro);
 
