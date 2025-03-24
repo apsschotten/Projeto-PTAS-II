@@ -7,7 +7,7 @@ class veiculoController {
     }
 
     static cadastrar(req, res) {
-
+        res.send(JSON.stringify(req.body));
     }
 
     static buscarTodos(req, res) {
