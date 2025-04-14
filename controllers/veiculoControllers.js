@@ -29,7 +29,7 @@ class veiculoController {
 
     static async buscarTodos(req, res) {
         const veiculos = await client.veiculo.findMany({})
-        res.render({ veiculos });
+        res.render("usuarios");
     }
 }
 
