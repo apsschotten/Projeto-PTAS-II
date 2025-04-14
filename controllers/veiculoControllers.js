@@ -21,12 +21,13 @@ class veiculoController {
             cor
         }});
          
-        res.send(veiculo.id);
-
+        res.send(veiculo);
+       
     }
 
-    static buscarTodos(req, res) {
-
+    static async buscarTodos(req, res) {
+        const veiculos = await client.veiculo.findWa({})
+        res.send(JSON.stringify(veiculo))
     }
 }
 
