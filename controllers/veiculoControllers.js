@@ -12,22 +12,24 @@ class veiculoController {
 
     static async cadastrar(req, res) {
 
-        const {modelo, placa, ano, cor} = req.body;
+        const { modelo, placa, ano, cor } = req.body;
 
-       const veiculo = await client.veiculo.create({data:{
-            modelo,
-            placa,
-            ano,
-            cor
-        }});
-         
-        res.send(veiculo);
-       
+        const veiculo = await client.veiculo.create({
+            data: {
+                modelo,
+                placa,
+                ano,
+                cor
+            }
+        });
+
+        res.send({ veiculo });
+
     }
 
     static async buscarTodos(req, res) {
-        const veiculos = await client.veiculo.findWa({})
-        res.send(JSON.stringify(veiculo))
+        const veiculos = await client.veiculo.findMany({})
+        res.render({ veiculos });
     }
 }
 

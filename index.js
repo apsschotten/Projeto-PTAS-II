@@ -6,6 +6,10 @@ const app = express()
 app.use(express.urlencoded({ extends: true }));
 app.use(express.json());
 
+const exphbs = require("express-handlebars");
+app.engine("handlebars", exphbs.engine());
+app.set("view engine", "handlebars");
+
 app.get('/', (req, res) => {
     res.send("Hello World!");
 });
