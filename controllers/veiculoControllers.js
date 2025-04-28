@@ -19,12 +19,12 @@ class veiculoController {
             data: {
                 modelo,
                 placa,
-                ano,
+                ano:parseInt(ano),
                 cor
             }
         });
 
-        res.send({ veiculo });
+        res.redirect("/veiculos/todos");
 
     }
 
