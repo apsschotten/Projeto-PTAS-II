@@ -6,11 +6,6 @@ const client = new PrismaClient();
 
 class veiculoController {
 
-    static formCadastro(req, res) {
-        res.render("formVeiculo");
-        //res.sendfile(path.join(__dirname, "../", "views", "formVeiculo.html"));
-    }
-
     static async cadastrar(req, res) {
 
         const { modelo, placa, ano, cor } = req.body;
@@ -24,7 +19,9 @@ class veiculoController {
             }
         });
 
-        res.redirect("/veiculos/todos");
+        res.json({
+            veiculoId: veiculo.id,
+        });
 
     }
 
