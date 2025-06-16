@@ -15,8 +15,11 @@ app.get('/', (req, res) => {
     //res.send("Hello World!");
 });
 
-const veiculoRoutes = require("./routes/veiculoRoutes")
-app.use("/veiculos", veiculoRoutes)
+const veiculoRoutes = require("./routes/veiculoRoutes");
+app.use("/veiculos", veiculoRoutes);
+
+const usuarioRoutes = require("./routes/veiculoRoutes");
+app.use("/usuarios", usuarioRoutes);
 
 app.listen(5000, (err) => {
     console.log("Aplicação rodando na porta 5000...");
