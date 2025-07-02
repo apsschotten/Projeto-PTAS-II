@@ -21,6 +21,13 @@ app.use("/veiculos", veiculoRoutes);
 const usuarioRoutes = require("./routes/veiculoRoutes");
 app.use("/usuarios", usuarioRoutes);
 
+app.get("/areaLogada", UsuarioController.verificaAutenticacao, (req, res) => {
+    res.json({
+        msg: 
+        "Você está logado com o ID " + req.usuarioId + " e pode acessar este recurso.",
+    });
+});
+
 app.listen(5000, (err) => {
     console.log("Aplicação rodando na porta 5000...");
 });

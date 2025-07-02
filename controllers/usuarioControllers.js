@@ -59,7 +59,22 @@ class usuarioController {
 
     static async verificaAutenticacao(req, res, next){
         const authHeader = req.headers["authorization"];
-        
+        if(authHeader){
+            const token  = authHeader.split(" ")[1];
+        }
+        res.json({
+            msg: "token não encontrado"
+        });
+
+        jwt.verify(token, process.env.SENHA_SERVIDOR, (err, payload) =>{
+            if(err){
+                return res.json({
+                msg: "token invalido"
+            });
+            req.usuarioId = payload.id;
+            next();
+            }
+        })
     }
 }
 
