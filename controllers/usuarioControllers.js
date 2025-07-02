@@ -56,6 +56,11 @@ class usuarioController {
             token: token,
         });
     }
+
+    static async verificaAutenticacao(req, res, next){
+        const authHeader = req.headers["authorization"];
+        
+    }
 }
 
 module.exports = usuarioController
