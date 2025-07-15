@@ -7,13 +7,18 @@ const client = new PrismaClient();
 
 class usuarioController {
     static async cadastrar(req, res) {
+        
+        console.log(req.body);
 
         const { nome, email, senha } = req.body;
 
         const salt = bcryptjs.genSaltSync(8);
         const hashSenha = bcryptjs.hashSync(senha, salt);
 
-        const usuario = await client.veiculo.create({
+     
+
+
+        const usuario = await client.usuario.create({
             data: {
                 nome,
                 email,

@@ -18,10 +18,12 @@ app.get('/', (req, res) => {
 const veiculoRoutes = require("./routes/veiculoRoutes");
 app.use("/veiculos", veiculoRoutes);
 
-const usuarioRoutes = require("./routes/veiculoRoutes");
-app.use("/usuarios", usuarioRoutes);
+const usuarioRoutes = require("./routes/usuarioRoutes");
+app.use("/usuario", usuarioRoutes);
 
-app.get("/areaLogada", UsuarioController.verificaAutenticacao, (req, res) => {
+const usuarioController = require('./controllers/usuarioControllers');
+
+app.get("/areaLogada", usuarioController.verificaAutenticacao, (req, res, next) => {
     res.json({
         msg: 
         "Você está logado com o ID " + req.usuarioId + " e pode acessar este recurso.",

@@ -4,6 +4,6 @@ const veiculoController = require('../controllers/veiculoControllers');
 
 router.post("/cadastro", veiculoController.cadastrar);
 
-router.get("/todos", veiculoController.buscarTodos);
+router.get("/todos", veiculoController.buscar);
 
 module.exports = router;

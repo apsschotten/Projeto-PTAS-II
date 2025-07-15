@@ -1,4 +1,3 @@
-
 const path = require("path");
 
 const { PrismaClient } = require("@prisma/client");
@@ -37,11 +36,11 @@ class veiculoController {
             });
         }
         else{
-            veiculos = await client.veiculo.findMany({});
+            veiculo = await client.veiculo.findMany({});
         }
         
         res.json({
-            veiculos,
+            veiculo,
         })
     }
 }
